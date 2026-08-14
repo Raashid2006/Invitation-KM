@@ -12,18 +12,23 @@ export default function Quotes() {
   }, []);
 
   return (
-    <div className="section fade-in" style={{ minHeight: "100%" }}>
-      <p className="eyebrow">Love Notes</p>
-      <HeartIcon size={22} color="#d4a45c" style={{ marginBottom: 22 }} />
+    <div className="section" style={{ minHeight: "100%" }}>
+      <p className="eyebrow rise-in">Love Notes</p>
+      <HeartIcon
+        size={22}
+        color="#e8b4b8"
+        className="heart-beat rise-in"
+        style={{ marginBottom: 22 }}
+      />
 
-      <p className="quote-hero" key={quoteIdx}>
+      <p className="quote-hero rise-in" key={quoteIdx} style={{ animationDelay: "0.1s" }}>
         <span className="quote-fade">&ldquo;{QUOTES[quoteIdx]}&rdquo;</span>
       </p>
 
-      <div className="quote-grid">
+      <div className="quote-grid rise-in" style={{ animationDelay: "0.25s" }}>
         {QUOTES.map((q, i) => (
           <div className="quote-card" key={i}>
-            <HeartIcon size={14} color="#c98a6b" style={{ marginBottom: 10 }} />
+            <HeartIcon size={14} color="#e26d8f" style={{ marginBottom: 10 }} />
             &ldquo;{q}&rdquo;
           </div>
         ))}

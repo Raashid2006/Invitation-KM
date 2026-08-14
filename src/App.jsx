@@ -3,6 +3,8 @@ import { Routes, Route } from "react-router-dom";
 import ThreeBackground from "./components/ThreeBackground.jsx";
 import EnvelopeCover from "./components/EnvelopeCover.jsx";
 import AmbientHearts from "./components/AmbientHearts.jsx";
+import FloatingPetals from "./components/FloatingPetals.jsx";
+import SparkleCursor from "./components/SparkleCursor.jsx";
 import NavBar from "./components/NavBar.jsx";
 import Home from "./pages/Home.jsx";
 import Venue from "./pages/Venue.jsx";
@@ -14,6 +16,7 @@ export default function App() {
   return (
     <div className="app-shell">
       <ThreeBackground />
+      <FloatingPetals />
 
       {opened && <AmbientHearts />}
 
@@ -31,6 +34,8 @@ export default function App() {
           <Route path="/quotes" element={<Quotes />} />
         </Routes>
       </div>
+
+      <SparkleCursor />
     </div>
   );
 }
