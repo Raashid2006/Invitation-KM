@@ -1,16 +1,16 @@
 :root {
-  --wine-deep: #1a050e;
-  --wine: #320b1e;
-  --wine-light: #4a1228;
-  --wine-glass: rgba(50, 11, 30, 0.55);
-  --blush: #fdeef2;
-  --rose-gold: #e8b4b8;
-  --rose-gold-light: #f7cdd2;
-  --rose: #e26d8f;
-  --rose-deep: #b3405f;
-  --pink-soft: #ffc2cf;
-  --text-soft: #f3cfd8;
-  --text-faint: #d9a5b3;
+  --wine-deep: #ffd9e3;
+  --wine: #fff1f5;
+  --wine-light: #ffe4ec;
+  --wine-glass: rgba(255, 238, 243, 0.7);
+  --blush: #7d2f4b;
+  --rose-gold: #e8789f;
+  --rose-gold-light: #d25a85;
+  --rose: #ee9bb8;
+  --rose-deep: #e04676;
+  --pink-soft: #ffd2e0;
+  --text-soft: #a55370;
+  --text-faint: #c67e97;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -76,8 +76,8 @@ a { color: inherit; text-decoration: none; }
   width: var(--size);
   height: calc(var(--size) * 1.35);
   border-radius: 80% 0 80% 0;
-  background: linear-gradient(135deg, var(--pink-soft) 0%, var(--rose) 100%);
-  box-shadow: 0 0 8px rgba(226, 109, 143, 0.35);
+  background: linear-gradient(135deg, var(--rose) 0%, var(--rose-deep) 100%);
+  box-shadow: 0 0 8px rgba(224, 70, 118, 0.35);
   opacity: 0;
   animation: petalFall var(--dur) linear infinite;
   animation-delay: var(--delay);
@@ -109,7 +109,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 .shimmer {
-  background: linear-gradient(110deg, var(--rose-gold) 25%, #fff 50%, var(--rose-gold) 75%);
+  background: linear-gradient(110deg, var(--blush) 25%, var(--rose-deep) 50%, var(--blush) 75%);
   background-size: 250% 100%;
   -webkit-background-clip: text;
   background-clip: text;
@@ -150,7 +150,7 @@ a { color: inherit; text-decoration: none; }
   font-size: 13px;
   letter-spacing: 2px;
   text-transform: uppercase;
-  background: linear-gradient(to bottom, rgba(26, 5, 14, 0.75), transparent);
+  background: linear-gradient(to bottom, rgba(255, 241, 245, 0.85), transparent);
 }
 .navbar a {
   position: relative;
@@ -191,7 +191,7 @@ a { color: inherit; text-decoration: none; }
   cursor: pointer;
   padding: 24px;
   overflow: hidden;
-  background: radial-gradient(ellipse at center, rgba(74, 18, 40, 0.35) 0%, transparent 70%);
+  background: radial-gradient(ellipse at center, rgba(255, 228, 236, 0.55) 0%, transparent 70%);
   transition: opacity 0.9s ease, transform 0.9s ease;
 }
 .overlay.opened {
@@ -366,7 +366,7 @@ a { color: inherit; text-decoration: none; }
   max-width: 480px;
   width: 100%;
   backdrop-filter: blur(8px);
-  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.35), inset 0 0 40px rgba(226, 109, 143, 0.05);
+  box-shadow: 0 18px 50px rgba(210, 90, 133, 0.2), inset 0 0 40px rgba(238, 155, 184, 0.15);
 }
 @keyframes borderFlow {
   0% { background-position: 0% 0%, 0% 50%; }
@@ -439,8 +439,8 @@ a { color: inherit; text-decoration: none; }
 .tile:hover {
   transform: translateY(-6px) scale(1.02);
   border-color: var(--rose-gold);
-  background: rgba(74, 18, 40, 0.7);
-  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.4), 0 0 24px rgba(226, 109, 143, 0.18);
+  background: rgba(255, 228, 236, 0.85);
+  box-shadow: 0 14px 34px rgba(210, 90, 133, 0.22), 0 0 24px rgba(224, 70, 118, 0.2);
 }
 .tile:hover::before { transform: translateX(130%); }
 .tile-title {
@@ -486,8 +486,8 @@ a { color: inherit; text-decoration: none; }
 }
 .venue-map-link:hover {
   background: linear-gradient(90deg, var(--rose), var(--rose-gold));
-  color: var(--wine-deep);
-  box-shadow: 0 0 24px rgba(226, 109, 143, 0.45);
+  color: #fff;
+  box-shadow: 0 0 24px rgba(224, 70, 118, 0.45);
 }
 
 /* --- Quotes page --- */
@@ -524,8 +524,8 @@ a { color: inherit; text-decoration: none; }
 .quote-card:hover {
   transform: translateY(-5px);
   border-color: var(--rose-gold);
-  background: rgba(74, 18, 40, 0.65);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35), 0 0 20px rgba(226, 109, 143, 0.16);
+  background: rgba(255, 228, 236, 0.8);
+  box-shadow: 0 12px 30px rgba(210, 90, 133, 0.18), 0 0 20px rgba(224, 70, 118, 0.16);
 }
 
 .footer-text {
