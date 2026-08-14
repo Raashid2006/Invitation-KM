@@ -49,6 +49,10 @@ export default function Home() {
         at the ceremony of their engagement
       </p>
 
+      <div className="couple-photo rise-in" style={{ animationDelay: "0.55s" }}>
+        <img src="/images/couple.jpg" alt="Magesh Raja & Kalaiarasi" />
+      </div>
+
       <div className="card rise-in" style={{ marginTop: 44, animationDelay: "0.6s" }}>
         <p className="card-label">Save The Date</p>
         <p className="date-main shimmer">Sunday, 13th September 2026</p>
