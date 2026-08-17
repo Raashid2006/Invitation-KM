@@ -3,24 +3,14 @@ import React, { useEffect, useRef, useState } from "react";
 export default function AudioPlayer({ src }) {
   const audioRef = useRef(null);
   const [playing, setPlaying] = useState(false);
-  const [unlocked, setUnlocked] = useState(false);
 
   useEffect(() => {
     const audio = audioRef.current;
     if (!audio) return;
     audio.loop = true;
     audio.volume = 0.35;
-
-    const unlock = () => {
-      if (!unlocked) {
-        setUnlocked(true);
-        audio.play().then(() => setPlaying(true)).catch(() => {});
-      }
-      document.removeEventListener("click", unlock);
-    };
-    document.addEventListener("click", unlock);
-    return () => document.removeEventListener("click", unlock);
-  }, [unlocked]);
+    audio.play().then(() => setPlaying(true)).catch(() => {});
+  }, []);
 
   const toggle = () => {
     const audio = audioRef.current;
