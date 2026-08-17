@@ -24,7 +24,7 @@ export default function App() {
       <EnvelopeCover opened={opened} onOpen={() => setOpened(true)} />
 
       {opened && <NavBar />}
-      {opened && <AudioPlayer src="/uyire.mp3" />}
+      {opened && <AudioPlayer src="/kannalane.mp3" />}
 
       <div
         className="page-scroll"
