@@ -5,6 +5,7 @@ import EnvelopeCover from "./components/EnvelopeCover.jsx";
 import AmbientHearts from "./components/AmbientHearts.jsx";
 import FloatingPetals from "./components/FloatingPetals.jsx";
 import SparkleCursor from "./components/SparkleCursor.jsx";
+import AudioPlayer from "./components/AudioPlayer.jsx";
 import NavBar from "./components/NavBar.jsx";
 import Home from "./pages/Home.jsx";
 import Venue from "./pages/Venue.jsx";
@@ -23,6 +24,7 @@ export default function App() {
       <EnvelopeCover opened={opened} onOpen={() => setOpened(true)} />
 
       {opened && <NavBar />}
+      {opened && <AudioPlayer src="/uyire.mp3" />}
 
       <div
         className="page-scroll"
