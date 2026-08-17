@@ -1,16 +1,18 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, useImperativeHandle, forwardRef } from "react";
 
-export default function AudioPlayer({ src }) {
+const AudioPlayer = forwardRef(function AudioPlayer({ src }, ref) {
   const audioRef = useRef(null);
   const [playing, setPlaying] = useState(false);
 
-  useEffect(() => {
-    const audio = audioRef.current;
-    if (!audio) return;
-    audio.loop = true;
-    audio.volume = 0.35;
-    audio.play().then(() => setPlaying(true)).catch(() => {});
-  }, []);
+  useImperativeHandle(ref, () => ({
+    play() {
+      const audio = audioRef.current;
+      if (!audio) return;
+      audio.loop = true;
+      audio.volume = 0.35;
+      audio.play().then(() => setPlaying(true)).catch(() => {});
+    },
+  }));
 
   const toggle = () => {
     const audio = audioRef.current;
@@ -36,7 +38,6 @@ export default function AudioPlayer({ src }) {
             <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
             <line x1="19" y1="7" x2="19" y2="17" />
             <line x1="15" y1="9" x2="15" y2="15" />
-            <line x1="23" y1="11" x2="23" y2="13" />
           </svg>
         ) : (
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -48,4 +49,6 @@ export default function AudioPlayer({ src }) {
       </button>
     </>
   );
-}
+});
+
+export default AudioPlayer;

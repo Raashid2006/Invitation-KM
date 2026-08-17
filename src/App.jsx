@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { Routes, Route } from "react-router-dom";
 import ThreeBackground from "./components/ThreeBackground.jsx";
 import EnvelopeCover from "./components/EnvelopeCover.jsx";
@@ -13,6 +13,7 @@ import Quotes from "./pages/Quotes.jsx";
 
 export default function App() {
   const [opened, setOpened] = useState(false);
+  const audioRef = useRef(null);
 
   return (
     <div className="app-shell">
@@ -21,10 +22,10 @@ export default function App() {
 
       {opened && <AmbientHearts />}
 
-      <EnvelopeCover opened={opened} onOpen={() => setOpened(true)} />
+      <EnvelopeCover opened={opened} onOpen={() => { setOpened(true); setTimeout(() => audioRef.current?.play(), 100); }} />
 
       {opened && <NavBar />}
-      {opened && <AudioPlayer src="/kannalane.mp3" />}
+      <AudioPlayer ref={audioRef} src="/kannalane.mp3" />
 
       <div
         className="page-scroll"
